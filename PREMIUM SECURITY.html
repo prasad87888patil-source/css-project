@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lokkout Premium</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Segoe UI,sans-serif;
+}
+
+body{
+    background:#02060f;
+    color:#fff;
+    display:flex;
+    justify-content:center;
+    padding:30px;
+}
+
+.container{
+    width:1200px;
+    background:linear-gradient(to bottom,#02060f,#08131f);
+    border:1px solid #2a2a2a;
+    border-radius:25px;
+    overflow:hidden;
+    box-shadow:0 0 20px rgba(255,215,0,.1);
+}
+
+/* NAVBAR */
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:25px 50px;
+    border-bottom:1px solid #1f1f1f;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.logo i{
+    font-size:45px;
+    color:#d8a24c;
+}
+
+.logo h2{
+    font-size:30px;
+}
+
+.logo span{
+    color:#d8a24c;
+    letter-spacing:3px;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:40px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:#fff;
+    transition:0.4s;
+}
+
+nav ul li a:hover,
+.active{
+    color:#d8a24c;
+}
+
+.premium-btn{
+    background:#d8a24c;
+    border:none;
+    padding:14px 30px;
+    border-radius:10px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* HERO */
+
+.hero{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:80px;
+}
+
+.tag{
+    background:#111;
+    color:#d8a24c;
+    padding:10px 20px;
+    border-radius:20px;
+}
+
+.left h1{
+    font-size:80px;
+    margin:30px 0;
+}
+
+.left h1 span{
+    color:#d8a24c;
+}
+
+.left p{
+    color:#cfcfcf;
+    font-size:22px;
+    line-height:40px;
+}
+
+.buttons{
+    margin-top:40px;
+}
+
+.gold-btn{
+    background:#d8a24c;
+    border:none;
+    padding:15px 35px;
+    border-radius:10px;
+    font-size:18px;
+    cursor:pointer;
+    margin-right:20px;
+}
+
+.dark-btn{
+    background:transparent;
+    border:1px solid #555;
+    color:white;
+    padding:15px 35px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+/* LOCK DESIGN */
+
+.right{
+    position:relative;
+}
+
+.circle{
+    width:400px;
+    height:400px;
+    border-radius:50%;
+    border:4px solid #d8a24c;
+    box-shadow:
+    0 0 20px #d8a24c,
+    0 0 60px #d8a24c;
+}
+
+.lock-card{
+    width:250px;
+    height:300px;
+    background:#0b111d;
+    border:4px solid #d8a24c;
+    border-radius:40px;
+    position:absolute;
+    top:50px;
+    left:75px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    box-shadow:0 0 40px rgba(216,162,76,.5);
+}
+
+.lock-card i{
+    font-size:100px;
+    color:#d8a24c;
+}
+
+/* FEATURES */
+
+.features{
+    padding:60px;
+}
+
+.features h2{
+    text-align:center;
+    font-size:45px;
+    margin-bottom:50px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
+}
+
+.card{
+    background:#08111d;
+    border:1px solid #333;
+    border-radius:20px;
+    padding:40px;
+    text-align:center;
+    transition:.5s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 25px rgba(216,162,76,.3);
+}
+
+.card i{
+    font-size:45px;
+    color:#d8a24c;
+    margin-bottom:20px;
+}
+
+.card h3{
+    margin-bottom:15px;
+}
+
+.card p{
+    color:#cfcfcf;
+}
+
+/* PRICING */
+
+.pricing{
+    margin:50px;
+    border:1px solid #333;
+    border-radius:20px;
+    padding:50px;
+    display:flex;
+    justify-content:space-between;
+}
+
+.price-left{
+    width:40%;
+}
+
+.price-left h2{
+    font-size:40px;
+    margin-bottom:20px;
+}
+
+.price-left p{
+    color:#ccc;
+    margin-bottom:30px;
+}
+
+.price-right{
+    width:50%;
+}
+
+.price-right h1{
+    font-size:70px;
+    color:#d8a24c;
+}
+
+.price-right span{
+    color:#fff;
+    font-size:30px;
+}
+
+.list{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+    margin-top:30px;
+}
+
+/* FOOTER */
+
+footer{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:40px;
+    padding:60px;
+    border-top:1px solid #222;
+}
+
+footer h3{
+    margin-bottom:20px;
+}
+
+footer p{
+    color:#cfcfcf;
+    margin-bottom:10px;
+}
+
+.social i{
+    width:45px;
+    height:45px;
+    border:1px solid #555;
+    border-radius:50%;
+    text-align:center;
+    line-height:45px;
+    margin-right:10px;
+    cursor:pointer;
+    transition:.5s;
+}
+
+.social i:hover{
+    background:#d8a24c;
+    color:#000;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<nav>
+    <div class="logo">
+        <i class="fa-solid fa-shield-halved"></i>
+        <div>
+            <h2>LOKKOUT</h2>
+            <span>PREMIUM</span>
+        </div>
+    </div>
+
+    <ul>
+        <li><a class="active" href="#">Home</a></li>
+        <li><a href="#">Features</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+
+    <button class="premium-btn">
+        <i class="fa-solid fa-crown"></i> Get Premium
+    </button>
+</nav>
+
+<section class="hero">
+
+    <div class="left">
+        <span class="tag">👑 PREMIUM SECURITY</span>
+
+        <h1>
+            LOKKOUT<br>
+            <span>PREMIUM</span>
+        </h1>
+
+        <p>
+            Secure your world with next-gen protection.<br>
+            Privacy. Safety. Peace of mind.
+        </p>
+
+        <div class="buttons">
+            <button class="gold-btn">Get Started</button>
+            <button class="dark-btn">Learn More</button>
+        </div>
+    </div>
+
+    <div class="right">
+        <div class="circle"></div>
+
+        <div class="lock-card">
+            <i class="fa-solid fa-shield-halved"></i>
+        </div>
+    </div>
+
+</section>
+
+<section class="features">
+
+    <h2>Why Choose Lokkout Premium?</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <i class="fa-solid fa-shield"></i>
+            <h3>Advanced Security</h3>
+            <p>Military-grade encryption to protect your data.</p>
+        </div>
+
+        <div class="card">
+            <i class="fa-solid fa-user"></i>
+            <h3>Privacy First</h3>
+            <p>Your privacy is our top priority.</p>
+        </div>
+
+        <div class="card">
+            <i class="fa-solid fa-cloud"></i>
+            <h3>Secure Backup</h3>
+            <p>Automatic & secure cloud backup.</p>
+        </div>
+
+        <div class="card">
+            <i class="fa-solid fa-headset"></i>
+            <h3>24/7 Support</h3>
+            <p>We're here anytime you need us.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="pricing">
+
+    <div class="price-left">
+        <h2>👑 Go Premium Today</h2>
+        <p>
+            Unlock all features and experience unmatched security.
+        </p>
+
+        <button class="gold-btn">
+            Upgrade Now
+        </button>
+    </div>
+
+    <div class="price-right">
+        <h1>₹199 <span>/ month</span></h1>
+
+        <div class="list">
+            <p>✔ Unlimited Devices</p>
+            <p>✔ Priority Support</p>
+            <p>✔ Advanced Encryption</p>
+            <p>✔ Secure Cloud Storage</p>
+            <p>✔ Ad-free Experience</p>
+            <p>✔ Regular Updates</p>
+        </div>
+    </div>
+
+</section>
+
+<footer>
+
+    <div>
+        <h2>LOKKOUT PREMIUM</h2>
+        <p>Keeping your data safe, always.</p>
+    </div>
+
+    <div>
+        <h3>Quick Links</h3>
+        <p>Home</p>
+        <p>Features</p>
+        <p>Pricing</p>
+        <p>About</p>
+    </div>
+
+    <div>
+        <h3>Legal</h3>
+        <p>Privacy Policy</p>
+        <p>Terms of Service</p>
+        <p>Refund Policy</p>
+    </div>
+
+    <div>
+        <h3>Follow Us</h3>
+
+        <div class="social">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-linkedin-in"></i>
+        </div>
+    </div>
+
+</footer>
+
+</div>
+
+</body>
+</html>
